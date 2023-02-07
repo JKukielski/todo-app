@@ -1,0 +1,6 @@
+.todo-container {
+    border-radius: 5px;
+    background-color: var(--complementary-color);
+    padding: 10px;
+    width: 800px;
+}
