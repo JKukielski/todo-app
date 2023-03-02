@@ -1,16 +1,106 @@
-.main-container {
+.filter-container {
+    width: 70%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-between  ;
-    margin-bottom: 15px;
-    width: 800px;
-    padding: 10px;
-    border-radius: 5px;
     background-color: var(--complementary-color);
-}
-
-.filter-btn-container {
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .filter-inner-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .status-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
+    justify-content: space-between;
+  }
+  
+  .filter-btn {
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    border-style: none;
+    -webkit-box-shadow: 8px 8px 7px -9px rgba(51, 53, 51, 1);
+    -moz-box-shadow: 8px 8px 7px -9px rgba(51, 53, 51, 1);
+    box-shadow: 8px 8px 7px -9px rgba(51, 53, 51, 1);
+    color: black;
+  }
+  
+  .add-todo {
+    width: 30%;
+    border-radius: 5px;
+    background-color: var(--primary-btn-color);
+  }
+  
+  .status-btn {
+    margin: 0 2px;
+    border-radius: 5px;
+    background-color: var(--secondary-btn-color);
+
+  }
+  
+  .all-btn {
+    margin: 0 2px;
+    border-radius: 5px;
+    background-color: var(--primary-btn-color);
+  }
+  
+  select {
+    padding: 0.5em 1em;
+    margin: 0 2px;
+  }
+  
+  @media screen and (max-width: 880px) {
+    .filter-container {
+      width: 90%;
+      flex-direction: column;
+    }
+  
+    .filter-inner-container {
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+    .status-container {
+     width: 100%;
+    }
+  
+    .add-todo {
+      width: 100%;
+      margin-bottom: 8px;
+    }
+  
+    .status-btn {
+      margin: 0 2px;
+      width: 100%;
+    }
+    
+    .all-btn {
+      margin: 0;
+    }
+    
+    select {
+      margin: 0;
+    }
+  }
+  
+  @media screen and (max-width: 660px) {
+    .filter-inner-container {
+      flex-direction: column;
+    }
+  
+    .add-todo {
+      margin-bottom: 3px;
+    }
+  
+    .status-btn {
+      margin: 3px 0;
+      width: 50%;
+    }
+  }
+  
+  

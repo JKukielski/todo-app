@@ -1,122 +1,248 @@
-.todo-item-container {
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+  }
+   
+.todo-item {
+    width: 100%;
+    display: flex;
+    background-color: var(--secondary-btn-color);
+    padding: 10px;
+    font-family: var(--primary-font);
+}
+  
+.todo-info-container {
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 5px 13px 5px 10px;
-    border-radius: 5px;
-    background-color: var(--secondary-btn-color);
-    margin: 5px 0;
-    height: 50px;
 }
-
-.todo-inner-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  
+.title-description-container {
     width: 100%;
 }
 
-.todo-info-container {
+.date-cat-icons-container {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    width: 180px;
-    margin-left: -80px;
+    align-items: center;
+    justify-content: space-between;
 }
-
-.todo-title {
-    font-size: 20px;
+  
+.date-cat-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+  
+.title {
+    font-size: 1.5em;
     font-weight: 600;
 }
 
-.todo-description {
-    font-size: 12px;
-}
-
-.todo-date {
-    width: 100px;
-}
-
-.todo-title-completed {
-    text-decoration: line-through;
-    color: #6f6d6d;
-    font-size: 20px;
+.title-completed {
+    font-size: 1.5em;
     font-weight: 600;
-}
-
-.todo-description-completed, .todo-date-completed {
     text-decoration: line-through;
     color: #6f6d6d;
 }
 
-.todo-options-container {
+.description-completed {
+    text-decoration: line-through;
+    color: #6f6d6d;
+}
+  
+.date {
+    width: 100%;
+    text-align: center;
+}
+
+.date-completed {
+    width: 100%;
+    text-align: center;
+    text-decoration: line-through;
+    color: #6f6d6d;
+  }
+  
+.category {
+    width: 50%;
+}
+  
+.icons-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    justify-self:flex-end;
-    width: 150px;
+    width: 90px;
 }
-
-.todo-category-background {
-    height: 23px;
-    padding: 0 3px;
-    background-color: var(--complementary-color);
-    border-radius: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 5px;
-}
-
-.todo-category {
-
-    color: var(--primary-btn-color)
-}
-
-.todo-options {
-     display: flex;
-}
-
-.todo-option-background {
+  
+.icon {
     width: 23px;
     height: 23px;
-    border-radius: 3px;
+    border-radius: 5px;
     background-color: var(--complementary-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 3px;
-    cursor: pointer;
 }
-
-.todo-checkbox {
-    display: block;
-    position: relative;
-    cursor: pointer;
+  
+.consent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
-
-.todo-checkbox input{
+  
+.checkbox-container input {
+    position: absolute;
     opacity: 0;
     cursor: pointer;
     height: 0;
-    width: 0;   
+    width: 0;
 }
-
-.todo-checkbox .checkbox {
-    position: absolute;
-    top: -1px;
-    height: 23px;
-    width: 23px;
-    background-color: var(--secondary-btn-color);
-    border: 2px solid var(--primary-btn-color);
-    border-radius: 3px;
+   
+.checkbox-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
 }
-
-.todo-checkbox input:checked ~ .checkbox {
-    background-image: url(../assets/Checkmark.svg);
-    background-position: center;
-    background-size: 50%;
-    background-repeat: no-repeat;
+   
+.checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 1.3em;
+    width: 1.3em;
+  
+    border-radius: 5px;
+    margin-right: 10px;
+    border: 1px solid var(--primary-btn-color);
+}
+  
+.checkmark {
+    background: var(--complementary-color);
+}
+   
+.checkbox-container input:checked ~ .checkmark {
     background-color: var(--primary-btn-color);
-  }
+}
+  
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+   
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+   
+.checkbox-container .checkmark:after {
+    left: 0.45em;
+    top: 0.25em;
+    width: 0.25em;
+    height: 0.5em;
+    border: 1px solid black;
+    border-width: 0 0.15em 0.15em 0;
+    transform: rotate(45deg);
+}
+  
+@media screen and (max-width: 950px) {
+    .todo-info-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .title-description-container {
+      margin-bottom: 10px;
+    }
+  
+    .date {
+      width: 100%;
+      text-align: left;
+    }
+    
+    .category {
+      width: 70%;
+      text-align: left;
+    }
+    
+    .icons-container {
+      width: 90px;
+    }
+}
+  
+@media screen and (max-width: 650px) {
+    .date-cat-icons-container {
+      flex-direction: column;
+    }
+  
+    .category {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .date-cat-container {
+      margin-bottom: 15px;
+    }
+}
+  
+@media screen and (max-width: 560px) {
+    .title {
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+  
+    .description, .date-cat-icons-container {
+      font-size: 0.7em;
+    }
+  
+    .consent-container {
+      padding: 5px 0 0 0;
+    }
+}
+  
+@media screen and (max-width: 415px) {
+    .category {
+      width: 50%;
+    }
+  
+    .icons-container {
+      width: 100%;
+      justify-content: flex-end;
+    }
+  
+    .icon {
+      margin: 0 3px;
+    }
+}
+  
+@media screen and (max-width: 345px) {
+      .date-cat-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+  
+      .title {
+        font-size: 0.9em;
+      }
+  
+      .date {
+        margin-bottom: 5px;
+      }
+  
+      .category {
+        text-align: left;
+      }
+}

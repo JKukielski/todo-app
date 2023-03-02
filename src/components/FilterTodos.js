@@ -23,7 +23,52 @@ const FilterTodos = () => {
 
   return (
     <>
-      <div className="main-container">
+      <div className="filter-container">
+        <button
+          className="filter-btn add-todo"
+          onClick={() => setOpenModal(true)}
+        >
+          Add Todo
+        </button>
+        <div className="filter-inner-container">
+          <button
+            className="filter-btn all-btn"
+            value="all"
+            onClick={handleStatusChange}
+          >
+            All
+          </button>
+          <div className="status-container">
+            <button
+              className="filter-btn status-btn"
+              value="complete"
+              onClick={handleStatusChange}
+            >
+              Complete
+            </button>
+            <button
+              className="filter-btn status-btn"
+              value="incomplete"
+              onClick={handleStatusChange}
+            >
+              Incomplete
+            </button>
+          </div>
+          <select
+            name=""
+            id="category"
+            value={filterCategory}
+            onChange={handleCategoryChange}
+          >
+            <option value="all">Select Category</option>
+            <option value="all">All</option>
+            <option value="Work">Work</option>
+            <option value="Education">Education</option>
+            <option value="Home">Home</option>
+          </select>
+        </div>
+      </div>
+      {/* <div className="main-container">
         <button className="primary-btn" onClick={() => setOpenModal(true)}>
           Add Todo
         </button>
@@ -65,7 +110,7 @@ const FilterTodos = () => {
             <option value="Home">Home</option>
           </select>
         </div>
-      </div>
+      </div> */}
       {openModal && (
         <TodoModal
           type="add"

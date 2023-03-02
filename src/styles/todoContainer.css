@@ -2,5 +2,11 @@
     border-radius: 5px;
     background-color: var(--complementary-color);
     padding: 10px;
-    width: 800px;
+    width: 70%;
+}
+
+@media screen and (max-width: 880px) {
+    .todo-container {
+        width: 90%;
+    }
 }
